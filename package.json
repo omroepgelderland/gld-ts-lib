@@ -1,0 +1,27 @@
+{
+  "name": "gld-ts-lib",
+  "version": "0.1.1-0",
+  "description": "Omroep Gelderland general typescript library",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.gld.nl//home/git/jsstdlib"
+  },
+  "license": "ISC",
+  "author": "Remy Glaser <rglaser@gld.nl>",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "eslint": "^9.29.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.1"
+  }
+}
