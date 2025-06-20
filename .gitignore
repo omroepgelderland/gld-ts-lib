@@ -1,0 +1,49 @@
+# Testbestanden #
+_*
+
+# Compiled source #
+###################
+#*.com
+#*.class
+#*.dll
+#*.exe
+#*.o
+#*.so
+
+# Temporary files #
+###################
+#*.swp
+#*.swo
+*~
+*.lock
+
+# Packages #
+############
+#*.7z
+#*.dmg
+#*.gz
+#*.iso
+#*.jar
+#*.rar
+#*.tar
+#*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+.directory
+
+# vscode #
+/.vscode/**
+
+/dist/**
+/test/**
+node_modules

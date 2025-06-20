@@ -6,7 +6,7 @@
     "type": "git",
     "url": "ssh://git@git.gld.nl//home/git/jsstdlib"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "Remy Glaser <rglaser@gld.nl>",
   "private": true,
   "type": "module",

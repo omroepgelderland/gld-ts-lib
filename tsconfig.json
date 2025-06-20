@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "esnext",
+    "target": "es6",
+    "allowJs": true,
+    "moduleResolution": "bundler",
+    "declaration": true,
+    "strict": true,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src/"]
+}
