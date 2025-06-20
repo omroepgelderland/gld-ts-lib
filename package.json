@@ -8,7 +8,6 @@
   },
   "license": "MIT",
   "author": "Remy Glaser <rglaser@gld.nl>",
-  "private": true,
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
