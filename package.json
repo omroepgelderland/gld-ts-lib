@@ -1,6 +1,6 @@
 {
   "name": "gld-ts-lib",
-  "version": "0.1.3",
+  "version": "0.1.4-alpha.0",
   "description": "Omroep Gelderland general typescript library",
   "repository": {
     "type": "git",
