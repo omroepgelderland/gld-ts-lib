@@ -1,4 +1,4 @@
-import Listener from "./Listener";
+import { Listener } from "./Listener";
 
 /**
  * A textarea that resizes according to the size of the user input.
@@ -50,4 +50,4 @@ class DynamicTextArea {
   }
 }
 
-export default DynamicTextArea;
+export { DynamicTextArea };

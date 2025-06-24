@@ -26,4 +26,4 @@ class Listener {
   }
 }
 
-export default Listener;
+export { Listener };

@@ -49,4 +49,4 @@ class Deferred<T, U = unknown> {
   }
 }
 
-export default Deferred;
+export { Deferred };

@@ -1,11 +1,11 @@
-export type Listener<T, U = void> = (event: T) => U;
+type Listener<T, U = void> = (event: T) => U;
 
-export interface Disposable {
+interface Disposable {
   dispose(): void;
 }
 
 /** passes through events as they happen. You will not get events from before you start listening */
-export class TypedEvent<T> {
+class TypedEvent<T> {
   private listeners: Listener<T>[] = [];
   private listenersOncer: Listener<T>[] = [];
 
@@ -41,3 +41,5 @@ export class TypedEvent<T> {
     return this.on((e) => te.emit(e));
   };
 }
+
+export { TypedEvent };

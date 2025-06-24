@@ -1,4 +1,4 @@
-export * from "./functions";
+export * as functions from "./functions";
 export * from "./Deferred";
 export * from "./DynamicTextarea";
 export * from "./Listener";

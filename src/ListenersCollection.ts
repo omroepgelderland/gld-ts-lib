@@ -1,4 +1,4 @@
-import Listener from "./Listener";
+import { Listener } from "./Listener";
 
 /**
  * Collection of event listeners.
@@ -62,4 +62,4 @@ class ListenersCollection {
   }
 }
 
-export default ListenersCollection;
+export { ListenersCollection };
