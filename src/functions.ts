@@ -55,7 +55,7 @@ function get_html_template_single<T extends Element>(
  *
  * @returns Element
  *
- * @throws Error when the element does not exist.
+ * @throws Error if the element does not exist.
  */
 function getElementById<T extends HTMLElement>(elementId: string): T {
   const elem = document.getElementById(elementId);
@@ -123,7 +123,7 @@ function decode_nimbus_access_token_segment(segment: string): string {
     return decodeURIComponent(
       atob(t).replace(/(.)/g, (match, p1) => {
         let n = p1.charCodeAt(0).toString(16).toUpperCase();
-        return n.length < 2 && (n = "0" + n), "%" + n;
+        return (n.length < 2 && (n = "0" + n), "%" + n);
       }),
     );
   } catch {
@@ -131,6 +131,9 @@ function decode_nimbus_access_token_segment(segment: string): string {
   }
 }
 
+/**
+ * Decodes a Nimbus JWT token.
+ */
 function decode_nimbus_jwt(token: string): NimbusJWTMetadata {
   try {
     const parts = token.split(".");
@@ -151,8 +154,8 @@ function is_dev(): boolean {
 /**
  * Compares two maps.
  *
- * @param map1
- * @param map2
+ * @param map1 - First comparator.
+ * @param map2 - Second comparator. Must have the same key and value type as map1.
  * @param cmp_value - Function for comparing two map values.
  */
 function maps_equal<K, V>(
@@ -175,15 +178,54 @@ function maps_equal<K, V>(
   return true;
 }
 
+/**
+ * Places non-breaking spaces in een Dutch international phone number for better readability.
+ *
+ * @param phone_number - Original phone number. Must start with +31 and any other character must be numeric.
+ */
+function format_phone_number_nl(phone_number: string): string {
+  const patterns = [
+    // Viercijferige netnummers
+    /^(\+31)((?:11|16|17|18|22|25|29|31|32|34|41|44|47|47|48|49|51|52|54|56|57|59|67|80|90)[0-9])([0-9]{2})([0-9]{2})([0-9]{2})$/,
+    // Eencijferige netnummers
+    /^(\+31)(6)([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})$/,
+    // Tweecijferige netnummers
+    /^(\+31)([0-9]{2})([0-9]{3})([0-9]{2})([0-9]{2})$/,
+  ];
+  for (const pattern of patterns) {
+    const m = phone_number.match(pattern);
+    if (m !== null && m.length > 0) {
+      m.shift();
+      return m.join(" ");
+    }
+  }
+  return phone_number;
+}
+
+/**
+ * Generates a random alphanumeric string.
+ *
+ * @param length - Length of the resulting string.
+ */
+function get_random_string(length: number) {
+  let respons = "";
+  while (respons.length < length) {
+    respons += Math.floor(Math.random() * Number.MAX_SAFE_INTEGER).toString(36);
+  }
+  return respons.substring(0, length);
+}
+
 export {
+  assert_notnil,
+  decode_nimbus_jwt,
+  format_phone_number_nl,
   get_html_template_single,
   get_html_template,
+  get_random_string,
   getElementById,
-  assert_notnil,
+  is_dev,
+  maps_equal,
   querySelector,
   querySelectorAllTagName,
   querySelectorTagName,
-  decode_nimbus_jwt,
-  is_dev,
-  maps_equal,
 };

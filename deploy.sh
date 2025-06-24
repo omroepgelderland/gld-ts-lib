@@ -8,7 +8,7 @@ projectdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd "$projectdir" || exit 1
 
 current_branch=$(git rev-parse --abbrev-ref HEAD)
-if [[ $(git rev-parse --abbrev-ref HEAD) != "master" ]]; then
+if [[ $current_branch != "heads/master" ]]; then
     echo "Op branch $current_branch ipv master. Toch doorgaan? (j/n)"
     read -r ans
     if [[ $ans != "j" ]]; then
@@ -55,5 +55,6 @@ else
 fi
 
 git gc
-git push
+git push origin
+git push github
 
