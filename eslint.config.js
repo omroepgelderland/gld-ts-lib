@@ -2,14 +2,17 @@
 
 import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
+import importPlugin from "eslint-plugin-import";
 
 export default tseslint.config({
-  ignores: [],
+  ignores: ["eslint.config.js"],
   extends: [
     eslint.configs.recommended,
     tseslint.configs.recommended,
     tseslint.configs.strict,
     tseslint.configs.stylistic,
+    importPlugin.flatConfigs.recommended,
+    importPlugin.flatConfigs.typescript,
   ],
   rules: {
     "@typescript-eslint/no-unused-vars": [
@@ -22,5 +25,7 @@ export default tseslint.config({
         ignoreRestSiblings: true,
       },
     ],
+    "import/extensions": ["error", "always"],
+    "import/no-default-export": ["error"],
   },
 });

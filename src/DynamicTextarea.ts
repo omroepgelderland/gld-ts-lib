@@ -1,4 +1,4 @@
-import { Listener } from "./Listener";
+import { Listener } from "./Listener.ts";
 
 /**
  * A textarea that resizes according to the size of the user input.

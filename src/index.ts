@@ -1,6 +1,6 @@
-export * as functions from "./functions";
-export * from "./Deferred";
-export * from "./DynamicTextarea";
-export * from "./Listener";
-export * from "./ListenersCollection";
-export * from "./TypedEvent";
+export * as functions from "./functions.ts";
+export * from "./Deferred.ts";
+export * from "./DynamicTextarea.ts";
+export * from "./Listener.ts";
+export * from "./ListenersCollection.ts";
+export * from "./TypedEvent.ts";

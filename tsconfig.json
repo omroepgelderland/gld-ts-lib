@@ -9,7 +9,9 @@
     "declaration": true,
     "strict": true,
     "allowUnreachableCode": false,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "rewriteRelativeImportExtensions": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/"]
 }

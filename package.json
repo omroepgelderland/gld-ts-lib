@@ -10,6 +10,13 @@
   "author": "Remy Glaser <rglaser@gld.nl>",
   "type": "module",
   "main": "dist/index.js",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./functions": "./dist/functions.js"
+  },
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
@@ -19,6 +26,7 @@
   },
   "devDependencies": {
     "eslint": "^9.29.0",
+    "eslint-plugin-import": "^2.32.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.34.1"

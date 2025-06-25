@@ -1,4 +1,4 @@
-import { Listener } from "./Listener";
+import { Listener } from "./Listener.ts";
 
 /**
  * Collection of event listeners.
