@@ -25,7 +25,8 @@
     "/dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postversion": "git push origin \"v$npm_package_version\" && git push github \"v$npm_package_version\""
   },
   "devDependencies": {
     "eslint": "^9.29.0",
