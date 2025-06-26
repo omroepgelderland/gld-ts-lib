@@ -22,6 +22,6 @@ npm audit fix
 
 # webpack compilen
 delete_dist_bestanden
-git ls-tree -r --name-only HEAD | grep -P '\.ts$' | xargs npx eslint || exit 1
-git ls-tree -r --name-only HEAD | grep -P '\.(ts|js|css|scss|html|json)$' | xargs npx prettier --write || exit 1
+git ls-files -z | grep -zP '\.ts$' | xargs -0 npx eslint || exit 1
+git ls-files -z | grep -zP '\.(ts|js|css|scss|html|json)$' | xargs -0 npx prettier --write || exit 1
 npx tsc --sourceMap || exit 1
