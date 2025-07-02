@@ -27,5 +27,13 @@ export default tseslint.config({
     ],
     "import/extensions": ["error", "always"],
     "import/no-default-export": ["error"],
+    "@typescript-eslint/explicit-member-accessibility": [
+      "error",
+      {
+        overrides: {
+          constructors: "no-public",
+        },
+      },
+    ],
   },
 });

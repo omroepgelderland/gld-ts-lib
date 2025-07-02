@@ -21,7 +21,7 @@ class Listener {
   /**
    * Removes the listener.
    */
-  off(): void {
+  public off(): void {
     this.target.removeEventListener(this.type, this.callback, this.options);
   }
 }
