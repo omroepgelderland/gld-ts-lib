@@ -9,7 +9,7 @@ cd "$projectdir" || exit 1
 
 # Node environment
 if [ ! -f ~/.nvm/nvm.sh ]; then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 fi
 export NODE_ENV=development
 . ~/.nvm/nvm.sh

@@ -86,7 +86,7 @@ function querySelector<T extends Element>(
 function querySelectorAllTagName<K extends keyof HTMLElementTagNameMap>(
   tag_name: K,
   selectors = "",
-  context: Document | Element = document,
+  context: Document | Element | DocumentFragment = document,
 ): NodeListOf<HTMLElementTagNameMap[K]> {
   selectors = tag_name + selectors;
   return context.querySelectorAll<HTMLElementTagNameMap[K]>(selectors);
@@ -95,7 +95,7 @@ function querySelectorAllTagName<K extends keyof HTMLElementTagNameMap>(
 function querySelectorTagName<K extends keyof HTMLElementTagNameMap>(
   tag_name: K,
   selectors = "",
-  context: Document | Element = document,
+  context: Document | Element | DocumentFragment = document,
 ): HTMLElementTagNameMap[K] {
   selectors = tag_name + selectors;
   const elem = context.querySelector<HTMLElementTagNameMap[K]>(selectors);
